@@ -1,5 +1,5 @@
 let items= [];
-let itemCount= 50;
+let itemCount= 35;
 let pipImg, chimImg, turtImg;
 
 function preload(){
@@ -17,9 +17,9 @@ function setup() {
       type: random(["pip","chim","turt"]),
       x: random(width),
       y: random(height),
-      size: 50,
-      veloX: random(1,1.5),
-      veloY: random(1,1.5)
+      size: random(25,70),
+      veloX: random([-1, 1]) *random(0.5,1.5),
+      veloY: random([-1, 1]) *random(0.5,1.5)
     })
   }
 }
