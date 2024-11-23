@@ -1,5 +1,6 @@
 # Starter Showdown
-Welcome to Starter Showdown, a battle arena where the og Sinnoh starters prove who’s the true MVP of the trio *(its gotta be piplup right??)* ![piplup_2q](https://github.com/user-attachments/assets/42bb1843-6bb2-414f-b543-ff6319224f8d)
+Welcome to Starter Showdown, a battle arena where the og Sinnoh starters prove who’s the true MVP of the trio </br>
+*(its gotta be piplup right??)* ![piplup_2q](https://github.com/user-attachments/assets/42bb1843-6bb2-414f-b543-ff6319224f8d)
 ## Let the battles begin! 
 ### Controls 
 Like any good Pokémon Professor, you’re here to observe. Sit back, relax, and enjoy
