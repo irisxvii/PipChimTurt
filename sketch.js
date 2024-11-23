@@ -1,16 +1,25 @@
 let items= [];
-let itemCount= 50;
+let itemCount= 70;
+let pipImg, chimImg, turtImg;
+
+function preload(){
+  pipImg= loadImage('assets/piplup.png');
+  chimImg= loadImage('assets/chimchar.png');
+  turtImg= loadImage('assets/turtwig.png');
+}
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
 
-  for(let i=0; i<itemCount; i++){
+  for(let i=0; i<itemCount; i++)
+  {
     items.push({ 
+      type: random(["pip","chim","turt"]),
       x: random(width),
       y: random(height),
-      size: 50,
-      veloX: random(1,3),
-      veloY: random(1,3)
+      size: 30,
+      veloX: random(1,1.5),
+      veloY: random(1,1.5)
     })
   }
 }
@@ -28,7 +37,16 @@ function draw() {
   if(item.y < 0 || item.y > height)
     item.veloY*= -1;
 
-  fill(100, 150, 255);
-  noStroke();
-  ellipse(item.x, item.y, item.size);
+  drawItem(item.type, item.size, item.x, item.y);
+
+  function drawItem(type, size, x, y)
+  {
+    imageMode(CENTER);
+    if(type == "pip")
+      image(pipImg, x, y, size, size);
+    else if (type == "chim")
+      image(chimImg, x, y, size, size);
+    else if (type == "turt")
+      image(turtImg, x, y, size, size);
+  }
 }}
