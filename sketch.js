@@ -25,20 +25,21 @@ function setup() {
 }
 
 function draw() {
-  background(220,220,220,25);
+  background(220,220,220,45);
 
   for(let i=0; i<items.length; i++){
     let item= items[i];
     item.x+= item.veloX;
     item.y+= item.veloY;
 
+    //a cute glow behind the pokemon
     noStroke();
     if (item.type === "pip") fill(135, 206, 250, 150); 
     else if (item.type === "chim") fill(240, 128, 128, 150); 
     else if (item.type === "turt") fill(144, 238, 144, 150); 
     ellipse(item.x, item.y, item.size / 2);
 
-  //makes them bounce if they hit a wall
+  //make them bounce if they hit a wall
   if(item.x < 0 || item.x > width)
     item.veloX*= -1;
   if(item.y < 0 || item.y > height)
@@ -46,7 +47,7 @@ function draw() {
 
   drawItem(item.type, item.size, item.x, item.y);
 
-  //checking for collisions
+  //checking for collisions w each other
   for (let j = i + 1; j < items.length; j++) {
     let oponent = items[j];
     if (dist(item.x, item.y, oponent.x, oponent.y)< item.size/2+ oponent.size/2)
