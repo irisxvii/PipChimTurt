@@ -25,12 +25,18 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(220,220,220,25);
 
   for(let i=0; i<items.length; i++){
     let item= items[i];
     item.x+= item.veloX;
     item.y+= item.veloY;
+
+    noStroke();
+    if (item.type === "pip") fill(135, 206, 250, 150); 
+    else if (item.type === "chim") fill(240, 128, 128, 150); 
+    else if (item.type === "turt") fill(144, 238, 144, 150); 
+    ellipse(item.x, item.y, item.size / 2);
 
   //makes them bounce if they hit a wall
   if(item.x < 0 || item.x > width)
